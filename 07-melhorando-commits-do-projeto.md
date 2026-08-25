@@ -36,3 +36,34 @@ merge     → integrar branches
 ```
 
 > ⚠️ Rebase reescreve o histórico. Evite usá-lo em branches compartilhadas sem saber o impacto.
+
+---
+
+### Git cherry-pick
+
+```bash
+git cherry-pick <hash-do-commit>
+```
+
+Copia um commit específico de uma branch e o aplica na branch atual. Útil para trazer correções urgentes sem fazer o merge de toda a branch original.
+
+---
+
+### Tipos de Merge
+
+O Git decide como integrar as branches baseando-se no histórico:
+
+- **Fast-forward:** Quando a branch de destino não tem novos commits. O ponteiro apenas "anda para frente".
+- **3-way merge:** Quando ambas as branches divergiram. O Git cria um **Merge Commit** para unir os históricos.
+
+#### Forçar merge commit
+```bash
+git merge --no-ff <branch>
+```
+Garante que um commit de merge seja criado, mesmo que um fast-forward seja possível (mantém o histórico da branch mais visível).
+
+#### Permitir apenas fast-forward
+```bash
+git merge --ff-only <branch>
+```
+O merge falha se não for possível apenas "adiantar" o ponteiro (ajuda a manter histórico linear).

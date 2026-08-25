@@ -44,6 +44,12 @@ git branch -D <nome>
 Força a exclusão da branch.
 
 ```bash
+git branch -m <novo-nome>
+```
+
+Renomeia a branch **atual**.
+
+```bash
 git merge <branch>
 ```
 

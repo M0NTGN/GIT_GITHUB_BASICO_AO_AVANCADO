@@ -136,6 +136,18 @@ Faz o branch local voltar exatamente ao estado de `origin/main`.
 
 ⚠️ **Cuidado:** descarta alterações locais não commitadas.
 
+### Reverter um commit (Seguro para histórico público)
+
+```bash
+git revert <commit_hash>
+```
+
+Cria um **novo commit** que faz exatamente o inverso das alterações do commit indicado.
+
+> **Diferença crucial:**
+> - `reset`: apaga o histórico (use apenas localmente).
+> - `revert`: mantém o histórico e adiciona uma correção (use para histórico já enviado ao GitHub).
+
 ---
 
 ## .gitignore
